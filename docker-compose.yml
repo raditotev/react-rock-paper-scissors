@@ -1,6 +1,7 @@
 services:
   # Production service
   rock-paper-scissors:
+    image: rock-paper-scissors:latest
     build:
       context: .
       dockerfile: Dockerfile
@@ -25,6 +26,7 @@ services:
 
   # Development service (optional)
   rock-paper-scissors-dev:
+    image: rock-paper-scissors:dev
     build:
       context: .
       dockerfile: Dockerfile.dev
