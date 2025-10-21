@@ -9,6 +9,7 @@ import React, {
 import type { Choice, GameState, Outcome, Round } from '@game/types'
 import { resolveRound, randomCpuChoice } from '@game/resolveRound'
 import { useAudio } from './AudioContext'
+import { generateUUID } from '../utils/uuid'
 
 type Action =
   | { type: 'choose'; player: Choice }
@@ -61,7 +62,7 @@ function reducer(state: GameState, action: Action): GameState {
       const cpu = randomCpuChoice()
       const outcome: Outcome = resolveRound(player, cpu)
       const round: Round = {
-        id: crypto.randomUUID(),
+        id: generateUUID(),
         player,
         cpu,
         outcome,
@@ -88,7 +89,7 @@ function reducer(state: GameState, action: Action): GameState {
       const cpu = randomCpuChoice()
       const outcome: Outcome = resolveRound(action.player, cpu)
       const round: Round = {
-        id: crypto.randomUUID(),
+        id: generateUUID(),
         player: action.player,
         cpu,
         outcome,
