@@ -18,7 +18,6 @@ npx jest --config jest.config.ts
 
 ### Features
 
-- Best-of 1/3/5, ties tracked
 - Local persistence for settings
 - Theme (system/light/dark)
 - A11y: keyboard, aria-live, color contrast
