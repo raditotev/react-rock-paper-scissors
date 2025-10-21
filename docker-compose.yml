@@ -1,0 +1,45 @@
+services:
+  # Production service
+  rock-paper-scissors:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '8101:80'
+    container_name: rock-paper-scissors-app
+    restart: unless-stopped
+    healthcheck:
+      test:
+        [
+          'CMD',
+          'wget',
+          '--quiet',
+          '--tries=1',
+          '--spider',
+          'http://localhost/health',
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Development service (optional)
+  rock-paper-scissors-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - '8102:3000'
+    container_name: rock-paper-scissors-dev
+    volumes:
+      - ./app:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    profiles:
+      - dev
+    command: npm run dev
+
+networks:
+  default:
+    name: rock-paper-scissors-network

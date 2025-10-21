@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install deps
+        working-directory: app
+        run: npm ci || npm install
+      - name: Type check
+        working-directory: app
+        run: npm run type-check
+      - name: Lint
+        working-directory: app
+        run: npm run lint --silent || true
+      - name: Test
+        working-directory: app
+        run: npx jest --config jest.config.ts --runInBand

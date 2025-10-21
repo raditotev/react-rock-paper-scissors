@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100;
+}
+
+.focus-ring {
+  @apply outline-none ring-2 ring-offset-2 ring-sky-500 dark:ring-sky-400 ring-offset-white dark:ring-offset-slate-900;
+}
+
+.fade-in {
+  @apply transition-opacity duration-200 ease-out;
+}
+
+.pressable:active {
+  transform: translateY(1px);
+}
