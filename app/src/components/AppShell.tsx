@@ -143,7 +143,7 @@ export function AppShell({
 
       {/* Main content area */}
       <main
-        className="flex-1 flex flex-col items-center justify-center px-4 md:px-6"
+        className="flex-1 flex flex-col items-center justify-center px-0"
         aria-live="off"
       >
         {children}

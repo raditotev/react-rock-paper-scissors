@@ -67,7 +67,7 @@ export function GameBoard(): React.ReactElement {
       </div>
 
       {/* Player Choice Buttons - Fixed position */}
-      <div className="grid grid-cols-3 gap-6 sm:flex sm:justify-center sm:gap-4 md:gap-8 lg:gap-12 relative mb-6 px-2 sm:px-4">
+      <div className="grid grid-cols-3 gap-4 md:gap-8 lg:gap-12 relative mb-6">
         {state.isCountingDown && (
           <div
             className="absolute inset-0 z-10 flex items-center justify-center bg-white/70 dark:bg-slate-900/70 rounded-full sm:rounded-none"
