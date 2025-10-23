@@ -107,4 +107,4 @@ The following audio files are required and should be placed in `app/public/sound
 - `select.mp3` - Sound played when player makes a selection
 - `win.mp3` - Sound played when player wins
 
-You can download sound effects for free from <a href="https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=337219">Pixabay</a>
+I have build this app for my daughter and used recordings of my voice for some of the sounds, e.g. `countdown-tick`, `win`, `lose`. However if you want to use game sounds there is a rich library of sound effects for free from <a href="https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=337219">Pixabay</a>.
